@@ -20,10 +20,12 @@ public class Ghost{
 	}
 
 	public boolean move() {
-		if (this.get_valid_moves().isEmpty()){
+		ArrayList<Location> loc = this.get_valid_moves();
+		if (loc.isEmpty()){
 			return false;
 		}else{
-			this.myLoc = this.get_valid_moves().get(0);
+			this.myLoc = loc.get(0);
+			myMap.move(myName, loc.get(0), Map.Type.GHOST)
 			return true;
 		}
 	}

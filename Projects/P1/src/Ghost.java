@@ -1,4 +1,7 @@
 import java.util.HashSet;
+
+import com.sun.jdi.Location;
+
 import java.util.ArrayList;
 
 public class Ghost{
@@ -17,7 +20,12 @@ public class Ghost{
 	}
 
 	public boolean move() {
-		return false;
+		if (this.get_valid_moves().isEmpty()){
+			return false;
+		}else{
+			this.myLoc = this.get_valid_moves().get(0);
+			return true;
+		}
 	}
 
 	public boolean is_pacman_in_range() { 

@@ -1,4 +1,7 @@
 import java.util.HashSet;
+
+import com.sun.jdi.Location;
+
 import java.util.ArrayList;
 
 public class Ghost{
@@ -38,7 +41,14 @@ public class Ghost{
 	}
 
 	public boolean move() {
-		return false;
+		ArrayList<Location> loc = this.get_valid_moves();
+		if (loc.isEmpty()){
+			return false;
+		}else{
+			this.myLoc = loc.get(0);
+			myMap.move(myName, loc.get(0), Map.Type.GHOST)
+			return true;
+		}
 	}
 
 	public boolean is_pacman_in_range() { 

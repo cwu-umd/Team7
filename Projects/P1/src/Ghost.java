@@ -46,7 +46,7 @@ public class Ghost{
 			return false;
 		}else{
 			this.myLoc = loc.get(0);
-			myMap.move(myName, loc.get(0), Map.Type.GHOST)
+			myMap.move(myName, loc.get(0), Map.Type.GHOST);
 			return true;
 		}
 	}

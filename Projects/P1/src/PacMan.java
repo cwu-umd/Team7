@@ -26,7 +26,7 @@ public class PacMan{
 		return false;
 	}
 
-	public JComponent consume() { 
+	public JComponent consume() {
 		//test
  		return null;
 	}

@@ -56,6 +56,10 @@ public class Ghost{
 	}
 
 	public boolean attack() {
-		return false;
+		if (this.is_pacman_in_range()) {
+			return myMap.attack(myName);
+		} else {
+			return false;
+		}
 	}
 }

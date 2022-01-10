@@ -71,9 +71,9 @@ Test: The first test creates a frame with one ghost and pacman in range. It test
 
 ### get_valid_moves()
 
-Implementation: 
+Implementation: Checks the locations to each side (left, right, above, below) of pacman. If the location is in the map and it does not contain a wall the location is added to an arraylist of valid Locations. 
 
-Test:
+Test: Creats a pacman in he frame at location (1,1) and checks that the array list returned from get_valid_moves equals an array list of locations (1,2) and (2,1).
 
 ### move()
 

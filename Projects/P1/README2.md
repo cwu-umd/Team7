@@ -37,9 +37,9 @@ Test: Creates a frame with packman and 5 ghosts, 4 ghosts are in the 4 possible 
 
 ### eatCookie()
 
---discription of implimintation--
+Implementation: The method controls Pacman eating a cookie. If there is NOT a cookie at pacman's location, null is returned. Otherwise if there is a cookie, the cookie's id is generated. (For example, the id for a cookie at (10, 1) is tok_x10_y1.) Then, components, locations, and field are updated to remove the cookie and cookies is incremented. This updates the display to show that a cookie has been eaten. The cookie JComponent that was removed from components is then returned. 
 
---dicription of test--
+Test: A new MainFrame is created with PacMan at (1,1). The test first verifies that there is a cookie at (1,1) and that the cookies count is 0. Pacman then eats the cookie. The test then checks that there is no longer a cookie at (1,1) and that the cookie count is 1. Next, the test checks that null is returned if Pacman calls eatCookie again, because there is no longer a cookie at (1,1). 
 
 ## Ghost Class
 
@@ -63,9 +63,9 @@ Test: The first test creates a frame with a PacMan and one ghost within range. I
 
 ### attack()
 
---discription of implimintation--
+Implementation: Checks to see if pacman is in range by calling the is_pacman_in_range method. If pacman is in range, the ghost attacks by calling the attack method from the Map class, which returns true if the ghost attack is successful. If pacman is not in range, this method returns false. 
 
---dicription of test--
+Test: The first test creates a frame with one ghost and pacman in range. It tests that true is returned when the ghost attacks pacman. The second test has three ghosts, two with pacman out of range and one with pacman in range. The test checks that attack returns false for the ghosts out of range and returns true for the ghost in range.
 
 ## PacMan Class
 
@@ -83,9 +83,9 @@ Test: Makes sure that both within a NoFrame environment and a MainFrame environm
 
 ### is_ghost_in_range()
 
---discription of implimintation--
+Implementation: Checks whether any of the spaces directly above, below, left, or right of pacman contain a ghost. If there is a ghost in any of these spaces, returns true. Otherwise, returns false. 
 
---dicription of test--
+Test: The first test creates a frame with pacman and a ghost next to each other and confirms that is_ghost_in_range returns true. The second test creates a frame with two ghosts outside of pacman's range and confirms that is_ghost_in_range returns false.
 
 ### consume()
 

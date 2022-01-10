@@ -53,9 +53,23 @@ public class Map{
 	}
 		
 	public boolean move(String name, Location loc, Type type) {
-		//update locations, components, and field
-		//use the setLocation method for the component to move it to the new location
-		return false;
+		//The method takes a name, location, and type and put the object specified by 
+		//the name at the location. If the function is able to successfull move the object 
+		//it returns true, otherwise it returns false.
+
+		if(field.get(loc).contains(Map.Type.WALL)){
+			//wall blocks move?
+			return false;
+		}
+		//update locations
+		Location oldLoc = locations.get(name);
+		locations.replace(name, loc);
+		//update components
+		components.get(name).setLocation(loc.x, loc.y);
+		//update field
+		field.get(oldLoc).remove(type);
+		field.get(loc).add(type);
+		return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {

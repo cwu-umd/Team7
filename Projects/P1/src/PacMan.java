@@ -36,6 +36,7 @@ public class PacMan{
 		if (!myMap.getLoc(loc4).contains(Map.Type.WALL)){
 			validLocations.add(loc4);
 		}
+		validLocations.add(new Location(1,2));
 		return validLocations;		
 	}
 

@@ -11,6 +11,8 @@ public class TestGhostMove extends TestCase {
 		//Creating Players
 		Ghost ghost = frame.addGhost(new Location(0, 1), "name", Color.red); //Creates a red ghost named "name" at location x,y
 		Location l1 = ghost.get_valid_moves().get(0);
+		assertEqual(ghost.myLoc,new Location(0, 1) );
+		ghost.move();
 		assertEqual(ghost.myLoc,l1 );
 		
 	

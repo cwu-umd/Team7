@@ -35,8 +35,6 @@ If so it sets gameover to true, moves the ghost to where pacman is, and returns 
 
 Test: Creates a frame with packman and 5 ghosts, 4 ghosts are in the 4 possible locations where they could attack pacman and the last on is slightly too far away. Tests make sure all ghost within range correctly attack pacman while the one too far away returns false.
 
---dicription of test--
-
 ### eatCookie()
 
 --discription of implimintation--

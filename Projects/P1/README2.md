@@ -2,7 +2,7 @@
 
 Team members: Emmy Denison, Josephine Palmhede, Robert Schmidt, Shira Shamouilian
 
---image of game play here ---
+<img src='pacman_gameplay.png' width="400">
 
 ## How to Run Pacman
 

@@ -69,26 +69,27 @@ public class Map{
 	public boolean attack(String Name) {
 		//update gameOver
 		Location currLoc = locations.get(Name);
+		if (currLoc == null) return false;
 		Location locNew = currLoc.shift(0, 1);
-		if (this.getLoc(locNew).contains(Map.Type.PACMAN)){
+		if (this.getLoc(locNew) != null && this.getLoc(locNew).contains(Map.Type.PACMAN)){
 			gameOver = true;
 			this.move(Name, locNew, Map.Type.GHOST);
 			return true;
 		}
 		locNew = currLoc.shift(1, 0);
-		if (this.getLoc(locNew).contains(Map.Type.PACMAN)){
+		if (this.getLoc(locNew) != null && this.getLoc(locNew).contains(Map.Type.PACMAN)){
 			gameOver = true;
 			this.move(Name, locNew, Map.Type.GHOST);
 			return true;
 		}
 		locNew = currLoc.shift(-1, 0);
-		if (this.getLoc(locNew).contains(Map.Type.PACMAN)){
+		if (this.getLoc(locNew) != null && this.getLoc(locNew).contains(Map.Type.PACMAN)){
 			gameOver = true;
 			this.move(Name, locNew, Map.Type.GHOST);
 			return true;
 		}
 		locNew = currLoc.shift(0, -1);
-		if (this.getLoc(locNew).contains(Map.Type.PACMAN)){
+		if (this.getLoc(locNew) != null && this.getLoc(locNew).contains(Map.Type.PACMAN)){
 			gameOver = true;
 			this.move(Name, locNew, Map.Type.GHOST);
 			return true;

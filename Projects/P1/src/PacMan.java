@@ -55,10 +55,29 @@ public class PacMan{
 	}
 
 	public boolean is_ghost_in_range() { 
-		return false;
+		Location up = myLoc.shift(0, -1);
+		Location down = myLoc.shift(0, 1);
+		Location left = myLoc.shift(-1, 0);
+		Location right = myLoc.shift(1, 0);
+
+		if (myMap.getLoc(up).contains(Map.Type.GHOST) ||
+				myMap.getLoc(down).contains(Map.Type.GHOST) ||
+				myMap.getLoc(left).contains(Map.Type.GHOST) ||
+				myMap.getLoc(right).contains(Map.Type.GHOST) ||
+				myMap.getLoc(myLoc).contains(Map.Type.GHOST)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
-	public JComponent consume() { 
+	public JComponent consume() {
+		//This method checks to see if there is a 'power-cookie' located in Pacman's current coordinate. 
+		//If there is, this method calls the eatCookie method from the Map Class, and returns the cookie 
+		//component if the cookie a consumed, and null otherwise.
+		if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)){
+			return myMap.eatCookie("pacman");
+		}
  		return null;
 	}
 }

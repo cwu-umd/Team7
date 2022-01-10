@@ -11,9 +11,9 @@ public class TestGhostInRange extends TestCase {
 		assertTrue(pacman1.is_ghost_in_range());
 
 		NoFrame frame2 = new NoFrame();
-		Ghost ghost2 = frame2.addGhost(new Location(3, 6), "g2", Color.red);
-		Ghost ghost3 = frame2.addGhost(new Location(10, 9), "g3", Color.blue);
-		PacMan pacman2 = frame2.addPacMan(new Location(4, 8));
+		Ghost ghost2 = frame2.addGhost(new Location(5, 3), "g2", Color.red);
+		Ghost ghost3 = frame2.addGhost(new Location(10, 9), "g3", Color.red);
+		PacMan pacman2 = frame2.addPacMan(new Location(3, 3));
 		assertFalse(pacman2.is_ghost_in_range());
 	}
 }

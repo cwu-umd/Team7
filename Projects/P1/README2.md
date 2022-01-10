@@ -15,9 +15,10 @@ To play Pacman, run the following lines from the project directory in your comma
 ## Map Class
 
 ### move()
---discription of implimintation--
+Implementation: Updates the locations HashSet, components HashSet, and field HashMap in the instance of the Map class. If the method is not able to successfully move the object it returns false, otherwise it returns true.
 
---dicription of test--
+Test: The test creates a frame with a pacman and a ghost. It then moves pacman within range of the ghost and uses PacMan.is_ghost_in_range() to check if pacman moved. Then moves the ghost
+out of range and performs the same check to see if the ghost was moved.
 
 ### getLoc()
 
@@ -53,9 +54,9 @@ Test: After creating a frame and a ghost at a location. The test checks that the
 
 ### is_pacman_in_range()
 
---discription of implimintation--
+Implementation: Checks all four cardinal directions around the ghost to see if PacMan is next to it using the conatins() method in the Location class. If any of the four directions contain pacman the method returns true. Otherwise it returns false.
 
---dicription of test--
+Test: The first test creates a frame with a PacMan and one ghost within range. It checks that the is_pacman_in_range() method returns true. The second test creates a new frame with a Pacman and two gosts out of range. It then checks that the is_pacman_in_range() method returns false.
 
 ### attack()
 
@@ -85,6 +86,6 @@ Test:
 
 ### consume()
 
---discription of implimintation--
+Implementation: Checks to see if there is a 'power-cookie' located in Pacman's current coordinate. If there is, this method calls the eatCookie method from the Map Class, and returns the cookie component if the cookie a consumed, and null otherwise.
 
---dicription of test--
+Test: Creates a frame with a PacMan and a cookie in the same location. Calls consume() once and checks that it returns the cookie, then calls it again to check that it returns null.

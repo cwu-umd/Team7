@@ -2,11 +2,11 @@ import java.util.HashSet;
 import java.util.ArrayList;
 import javax.swing.JComponent;
 
-public class PacMan {
+public class PacMan{
 	String myName;
 	Location myLoc;
 	Map myMap;
-	Location shift;
+	Location shift; 
 
 	public PacMan(String name, Location loc, Map map) {
 		this.myLoc = loc;
@@ -15,14 +15,14 @@ public class PacMan {
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		return null;
+		return null;	
 	}
 
 	public boolean move() {
 		return false;
 	}
 
-	public boolean is_ghost_in_range() {
+	public boolean is_ghost_in_range() { 
 		Location up = myLoc.shift(0, -1);
 		Location down = myLoc.shift(0, 1);
 		Location left = myLoc.shift(-1, 0);
@@ -39,7 +39,7 @@ public class PacMan {
 		}
 	}
 
-	public JComponent consume() {
-		return null;
+	public JComponent consume() { 
+ 		return null;
 	}
 }

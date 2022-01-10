@@ -13,6 +13,12 @@ javac -cp "src/" src/*.java
 java -cp "src/" StartMenu
 ```
 
+To run the tests, run the following lines but change the file name for whichever test you want to run:
+```bash
+javac -cp "tests/junit-4.10.jar;src/;tests/" src/*.java tests/TestPacManInRange.java
+java -cp "tests/junit-4.10.jar;src/;tests/" org.junit.runner.JUnitCore TestPacManInRange
+```
+In the example above you would change TestPacManInRange.java and TestPacManInRange to whatever test you needed.
 ## Map Class
 
 ### move()

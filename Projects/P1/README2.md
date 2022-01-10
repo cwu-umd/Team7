@@ -9,7 +9,8 @@ Team members: Emmy Denison, Josephine Palmhede, Robert Schmidt, Shira Shamouilia
 To play Pacman, run the following lines from the project directory in your command line:
 
 ```bash
-//code to run pacman here
+javac -cp "src/" src/*.java
+java -cp "src/" StartMenu
 ```
 
 ## Map Class
@@ -28,7 +29,11 @@ Test: After creating a frame, a Pacman and Ghost were both added to the same loc
 
 ### attack()
 
---discription of implimintation--
+Implementation: First finds the location of the chost based on the input name, if it doesn't exist
+just returns false. From there it checks of the location up, down, left, or right contains packman.
+If so it sets gameover to true, moves the ghost to where pacman is, and returns true.
+
+Test: Creates a frame with packman and 5 ghosts, 4 ghosts are in the 4 possible locations where they could attack pacman and the last on is slightly too far away. Tests make sure all ghost within range correctly attack pacman while the one too far away returns false.
 
 --dicription of test--
 
@@ -42,9 +47,9 @@ Test: After creating a frame, a Pacman and Ghost were both added to the same loc
 
 ### get_valid_moves()
 
---discription of implimintation--
+Implementation: Checks the location above, below, left, and right of the ghost. If the location isn't null and is not a wall then adds the location to an arraylist. Returns arraylist at the end.
 
---dicription of test--
+Test: Within a NoFrame environment makes sure an arraylist with all locations up, down, left, and right is returned. Within the MainFrame environment there is a wall above and below the ghost so it makes sure an arraylist with only the locations to the right and left is returned.
 
 ### move()
 
@@ -74,9 +79,9 @@ Test:
 
 ### move()
 
---discription of implimintation--
+Implementation: Retrieves an arraylist of all valid moves using the get_valid_moves method. If the returned arraylist is empty returns false. Otherwise changes pacmans location to the first location within the arraylist and returns the result from the Map move method with the first location within the arraylist.
 
---dicription of test--
+Test: Makes sure that both within a NoFrame environment and a MainFrame environment true is returned from running the move method.
 
 ### is_ghost_in_range()
 

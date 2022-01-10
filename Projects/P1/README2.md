@@ -13,6 +13,12 @@ javac -cp "src/" src/*.java
 java -cp "src/" StartMenu
 ```
 
+To run the tests, run the following lines but change the file name for whichever test you want to run:
+```bash
+javac -cp "tests/junit-4.10.jar;src/;tests/" src/*.java tests/TestPacManInRange.java
+java -cp "tests/junit-4.10.jar;src/;tests/" org.junit.runner.JUnitCore TestPacManInRange
+```
+In the example above you would change TestPacManInRange.java and TestPacManInRange to whatever test you needed.
 ## Map Class
 
 ### move()
@@ -47,7 +53,7 @@ Test: A new MainFrame is created with PacMan at (1,1). The test first verifies t
 
 Implementation: Checks the location above, below, left, and right of the ghost. If the location isn't null and is not a wall then adds the location to an arraylist. Returns arraylist at the end.
 
-Test: Within a NoFrame environment makes sure an arraylist with all locations up, down, left, and right is returned. Within the MainFrame environment there is a wall above and below the ghost so it makes sure an arraylist with only the locations to the right and left is returned.
+Test: Within a NoFrame environment makes sure an arraylist with all locations up, down and left is returned as there is a wall to the right. Within the second environment there is a wall above and below the ghost so it makes sure an arraylist with only the locations to the right and left is returned.
 
 ### move()
 
@@ -79,7 +85,7 @@ Test: Creats a pacman in he frame at location (1,1) and checks that the array li
 
 Implementation: Retrieves an arraylist of all valid moves using the get_valid_moves method. If the returned arraylist is empty returns false. Otherwise changes pacmans location to the first location within the arraylist and returns the result from the Map move method with the first location within the arraylist.
 
-Test: Makes sure that both within a NoFrame environment and a MainFrame environment true is returned from running the move method.
+Test: Makes sure that within a NoFrame environment true is returned from running the move method and that the location is properly updated.
 
 ### is_ghost_in_range()
 

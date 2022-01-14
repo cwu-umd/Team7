@@ -6,7 +6,7 @@ import java.util.HashSet;
 public class TestMapEatCookie extends TestCase {
 	
 	public void testMapEatCookie() throws FileNotFoundException {
-		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 		PacMan pacman = frame.addPacMan(new Location(1, 1));
 
 		assertTrue(frame.getMap().getLoc(new Location(1, 1)).contains(Map.Type.COOKIE));

@@ -40,7 +40,7 @@ public class Ghost{
 
 	public boolean move() {
 		ArrayList<Location> loc = this.get_valid_moves();
-		if (loc.isEmpty()){
+		if (!loc.isEmpty()){
 			return false;
 		}else{
 			this.myLoc = loc.get(0);

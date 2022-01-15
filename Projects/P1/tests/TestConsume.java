@@ -10,7 +10,7 @@ public class TestConsume extends TestCase {
 		CookieComponent cookie = new CookieComponent(1, 1, 1);
 
 		// pacman eats the cookie at (1,1)
-		//pacman.consume();
+		pacman.consume();
 
 		// pacman tries to eat the cookie at (1,1) again
 		assertEquals(pacman.consume(), null);

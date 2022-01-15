@@ -14,7 +14,7 @@ public class TestMapMove extends TestCase{
 
 		//try moving ghost
 		frame.getMap().move("ghost", new Location(1, 4), Map.Type.GHOST);
-		assertTrue(pacman.is_ghost_in_range());
+		assertFalse(pacman.is_ghost_in_range());
 
 
 	}

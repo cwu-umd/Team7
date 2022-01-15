@@ -12,33 +12,33 @@ jobs:
         run: |
           javac -cp "src/" src/*.java
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-  mapattack:  
+  testMapAttack:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
       - uses: actions/checkout@v2
-      - name: Test Map attack
+      - name: Test Map Attack
         working-directory: ./Projects/P1
         run: |
-          javac -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" Projects/P1/src/*.java Projects/P1/tests/*.java
-          java -Djava.awt.headless=true -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" org.junit.runner.JUnitCore TestMapAttack
-  PacManMove:
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+  testPacManMove:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
       - uses: actions/checkout@v2
-      - name: Test pacman move
+      - name: Test PacMan Move
         working-directory: ./Projects/P1
         run: |
-          javac -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" Projects/P1/src/*.java Projects/P1/tests/*.java
-          java -Djava.awt.headless=true -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" org.junit.runner.JUnitCore TestPacManMove
-  GhostValidMoves:
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
+  testGhostValidMoves:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
       - uses: actions/checkout@v2
-      - name: Test ghost valid moves
+      - name: Test ghost Valid Moves
         working-directory: ./Projects/P1
         run: |
-          javac -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" Projects/P1/src/*.java Projects/P1/tests/*.java
-          java -Djava.awt.headless=true -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves

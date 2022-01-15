@@ -69,7 +69,7 @@ public class Map{
 		//update field
 		field.get(oldLoc).remove(type);
 		field.get(loc).add(type);
-		return true;
+		return false;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {

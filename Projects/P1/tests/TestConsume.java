@@ -13,6 +13,6 @@ public class TestConsume extends TestCase {
 		pacman.consume();
 
 		// pacman tries to eat the cookie at (1,1) again
-		assertEquals(pacman.consume(), null);
+		assertEquals(pacman.consume(), 5);
 	}
 }

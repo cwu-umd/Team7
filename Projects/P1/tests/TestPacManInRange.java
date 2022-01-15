@@ -8,7 +8,7 @@ public class TestPacManInRange extends TestCase {
 		NoFrame frame1 = new NoFrame();
 		Ghost ghost1 = frame1.addGhost(new Location(1, 1), "g1", Color.red);
 		PacMan pacman1 = frame1.addPacMan(new Location(1, 2));
-		assertTrue(ghost1.is_pacman_in_range());
+		assertFalse(ghost1.is_pacman_in_range());
 
 		NoFrame frame2 = new NoFrame();
 		Ghost ghost2 = frame2.addGhost(new Location(1, 6), "g2", Color.red);

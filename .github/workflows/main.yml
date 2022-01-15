@@ -18,6 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Test Map attack
+        working-directory: ./Projects/P1
         run: |
           javac -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" Projects/P1/src/*.java Projects/P1/tests/*.java
           java -Djava.awt.headless=true -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" org.junit.runner.JUnitCore TestMapAttack
@@ -27,6 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Test pacman move
+        working-directory: ./Projects/P1
         run: |
           javac -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" Projects/P1/src/*.java Projects/P1/tests/*.java
           java -Djava.awt.headless=true -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" org.junit.runner.JUnitCore TestPacManMove
@@ -36,6 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Test ghost valid moves
+        working-directory: ./Projects/P1
         run: |
           javac -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" Projects/P1/src/*.java Projects/P1/tests/*.java
           java -Djava.awt.headless=true -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" org.junit.runner.JUnitCore TestGhostValidMoves

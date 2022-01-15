@@ -118,7 +118,7 @@ public class Map{
 
 		Location pacmanLoc = locations.get(name);
 		// if there is no cookie at pacman's location, return null
-		if (!field.get(pacmanLoc).contains(Map.Type.COOKIE)) {
+		if (field.get(pacmanLoc).contains(Map.Type.COOKIE)) {
 			return null;
 		}
 		// generate cookie's id

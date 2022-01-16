@@ -12,6 +12,40 @@ jobs:
         run: |
           javac -cp "src/" src/*.java
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+  
+  testghostinrange:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test PacMan is_ghost_in_range
+        working-directory: ./Projects/P1
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
+
+  testattack:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test Ghost attack
+        working-directory: ./Projects/P1
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
+
+  testmapeatcookie:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test Map eatCookie
+        working-directory: ./Projects/P1
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+
   testMapAttack:
     runs-on: ubuntu-latest
     container: openjdk
@@ -22,6 +56,7 @@ jobs:
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
           java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+          
   testPacManMove:
     runs-on: ubuntu-latest
     container: openjdk
@@ -32,6 +67,7 @@ jobs:
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
           java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
+          
   testGhostValidMoves:
     runs-on: ubuntu-latest
     container: openjdk
@@ -42,3 +78,4 @@ jobs:
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
           java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+

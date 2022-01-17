@@ -17,22 +17,22 @@ public class Ghost{
 		ArrayList<Location> validLocations = new ArrayList<Location>();
 		//dir 1
 		Location loc1 = myLoc.shift(0, 1);
-		if (myMap.getLoc(loc1) != null && myMap.getLoc(loc1).contains(Map.Type.WALL)){
+		if (myMap.getLoc(loc1) != null && !myMap.getLoc(loc1).contains(Map.Type.WALL)){
 			validLocations.add(loc1);
 		}
 		//dir 2
 		Location loc2 = myLoc.shift(1, 0);
-		if (myMap.getLoc(loc2) != null && myMap.getLoc(loc2).contains(Map.Type.WALL)){
+		if (myMap.getLoc(loc2) != null && !myMap.getLoc(loc2).contains(Map.Type.WALL)){
 			validLocations.add(loc2);
 		}
 		//dir 3
 		Location loc3 = myLoc.shift(0, -1);
-		if (myMap.getLoc(loc3) != null && myMap.getLoc(loc3).contains(Map.Type.WALL)){
+		if (myMap.getLoc(loc3) != null && !myMap.getLoc(loc3).contains(Map.Type.WALL)){
 			validLocations.add(loc3);
 		}
 		//dir 4
 		Location loc4 = myLoc.shift(-1, 0);
-		if (myMap.getLoc(loc4) != null && myMap.getLoc(loc4).contains(Map.Type.WALL)){
+		if (myMap.getLoc(loc4) != null && !myMap.getLoc(loc4).contains(Map.Type.WALL)){
 			validLocations.add(loc4);
 		}
 		return validLocations;
@@ -49,10 +49,10 @@ public class Ghost{
 		}
 	}
 
-	public boolean is_pacman_in_range() { 
-		//This function checks its surroundings to see if PacMan is in attack range. 
-		//The attack radius of a ghost is 1 which means that a ghost at location (x, y) 
-		//can attack PacMan as long as PacMan is located at (x +- 1, y +- 1). 
+	public boolean is_pacman_in_range() {
+		//This function checks its surroundings to see if PacMan is in attack range.
+		//The attack radius of a ghost is 1 which means that a ghost at location (x, y)
+		//can attack PacMan as long as PacMan is located at (x +- 1, y +- 1).
 		//If PacMan is in the attack range, this function returns true otherwise it returns false.
 
 		Location north = myLoc.shift(0, 1);

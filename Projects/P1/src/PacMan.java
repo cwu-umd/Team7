@@ -19,28 +19,28 @@ public class PacMan{
 		//dir 1
 		Location loc1 = myLoc.shift(0, 1);
 		if (myMap.getLoc(loc1) != null){
-			if (!myMap.getLoc(loc1).contains(Map.Type.WALL)){
+			if (myMap.getLoc(loc1).contains(Map.Type.WALL)){
 				validLocations.add(loc1);
 			}
 		}
 		//dir 2
 		Location loc2 = myLoc.shift(1, 0);
 		if (myMap.getLoc(loc2) != null){
-			if (!myMap.getLoc(loc2).contains(Map.Type.WALL)){
+			if (myMap.getLoc(loc2).contains(Map.Type.WALL)){
 				validLocations.add(loc2);
 			}
 		}
 		//dir 3
 		Location loc3 = myLoc.shift(0, -1);
 		if (myMap.getLoc(loc3) != null){
-			if (!myMap.getLoc(loc3).contains(Map.Type.WALL)){
+			if (myMap.getLoc(loc3).contains(Map.Type.WALL)){
 				validLocations.add(loc3);
 			}
 		}
 		//dir 4
 		Location loc4 = myLoc.shift(-1, 0);
 		if (myMap.getLoc(loc4) != null){
-			if (!myMap.getLoc(loc4).contains(Map.Type.WALL)){
+			if (myMap.getLoc(loc4).contains(Map.Type.WALL)){
 				validLocations.add(loc4);
 			}
 		}
@@ -50,7 +50,6 @@ public class PacMan{
 	public boolean move() {
 		ArrayList<Location> loc = this.get_valid_moves();
 		if(loc.isEmpty()) return false;
-		this.myLoc = loc.get(0);
 		return myMap.move(myName, loc.get(0), Map.Type.PACMAN);
 	}
 
@@ -65,9 +64,9 @@ public class PacMan{
 				myMap.getLoc(left).contains(Map.Type.GHOST) ||
 				myMap.getLoc(right).contains(Map.Type.GHOST) ||
 				myMap.getLoc(myLoc).contains(Map.Type.GHOST)) {
-			return true;
-		} else {
 			return false;
+		} else {
+			return true;
 		}
 	}
 
@@ -75,7 +74,7 @@ public class PacMan{
 		//This method checks to see if there is a 'power-cookie' located in Pacman's current coordinate. 
 		//If there is, this method calls the eatCookie method from the Map Class, and returns the cookie 
 		//component if the cookie a consumed, and null otherwise.
-		if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)){
+		if (!myMap.getLoc(myLoc).contains(Map.Type.COOKIE)){
 			return myMap.eatCookie("pacman");
 		}
  		return null;

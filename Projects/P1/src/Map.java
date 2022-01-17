@@ -69,12 +69,12 @@ public class Map{
 		//update field
 		field.get(oldLoc).remove(type);
 		field.get(loc).add(type);
-		return true;
+		return false;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
 		//wallSet and emptySet will help you write this method
-		if (field.containsKey(loc)){
+		if (!field.containsKey(loc)){
 			return field.get(loc);
 		}
 		return null;
@@ -84,7 +84,7 @@ public class Map{
 		//update gameOver
 		Location currLoc = locations.get(Name);
 		if (currLoc == null) return false;
-		Location locNew = currLoc.shift(0, 1);
+		Location locNew = currLoc.shift(0, 2);
 		if (this.getLoc(locNew) != null && this.getLoc(locNew).contains(Map.Type.PACMAN)){
 			gameOver = true;
 			this.move(Name, locNew, Map.Type.GHOST);
@@ -118,7 +118,7 @@ public class Map{
 
 		Location pacmanLoc = locations.get(name);
 		// if there is no cookie at pacman's location, return null
-		if (!field.get(pacmanLoc).contains(Map.Type.COOKIE)) {
+		if (field.get(pacmanLoc).contains(Map.Type.COOKIE)) {
 			return null;
 		}
 		// generate cookie's id

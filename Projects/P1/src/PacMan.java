@@ -66,9 +66,9 @@ public class PacMan{
 				myMap.getLoc(left).contains(Map.Type.GHOST) ||
 				myMap.getLoc(right).contains(Map.Type.GHOST) ||
 				myMap.getLoc(myLoc).contains(Map.Type.GHOST)) {
-			return false;
-		} else {
 			return true;
+		} else {
+			return false;
 		}
 	}
 

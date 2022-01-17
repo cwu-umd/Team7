@@ -84,7 +84,7 @@ public class Map{
 		//update gameOver
 		Location currLoc = locations.get(Name);
 		if (currLoc == null) return false;
-		Location locNew = currLoc.shift(0, 2);
+		Location locNew = currLoc.shift(0, 1);
 		if (this.getLoc(locNew) != null && this.getLoc(locNew).contains(Map.Type.PACMAN)){
 			gameOver = true;
 			this.move(Name, locNew, Map.Type.GHOST);

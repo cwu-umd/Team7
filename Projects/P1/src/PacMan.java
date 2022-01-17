@@ -48,6 +48,7 @@ public class PacMan{
 	}
 
 	public boolean move() {
+
 		ArrayList<Location> loc = this.get_valid_moves();
 		if(loc.isEmpty()) return false;
 		this.myLoc = loc.get(0);

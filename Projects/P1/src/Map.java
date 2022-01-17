@@ -127,7 +127,7 @@ public class Map{
 		JComponent cookie = components.remove(cookieId);
 		locations.remove(cookieId);
 		field.get(pacmanLoc).remove(Map.Type.COOKIE);
-		cookies++;
+		cookies--;
 
 		return cookie;
 	}

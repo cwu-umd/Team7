@@ -9,17 +9,17 @@ public class Map{
 		PACMAN,
 		GHOST,
 		WALL,
-		COOKIE		
+		COOKIE
 	}
-	
+
 	private HashMap<Location, HashSet<Type>> field;
 	private boolean gameOver;
 	private int dim;
 
 	private HashMap<String, Location> locations;
-	private HashMap<String, JComponent> components; 
+	private HashMap<String, JComponent> components;
 	private HashSet<Type> emptySet;
-	private HashSet<Type> wallSet; 
+	private HashSet<Type> wallSet;
 
 	private int cookies = 0;
 
@@ -47,14 +47,14 @@ public class Map{
 	public int getCookies() {
 		return cookies;
 	}
-	
+
 	public boolean isGameOver() {
 		return gameOver;
 	}
-		
+
 	public boolean move(String name, Location loc, Type type) {
-		//The method takes a name, location, and type and put the object specified by 
-		//the name at the location. If the function is able to successfull move the object 
+		//The method takes a name, location, and type and put the object specified by
+		//the name at the location. If the function is able to successfull move the object
 		//it returns true, otherwise it returns false.
 
 		if(field.get(loc).contains(Map.Type.WALL)){
@@ -71,10 +71,10 @@ public class Map{
 		field.get(loc).add(type);
 		return false;
 	}
-	
+
 	public HashSet<Type> getLoc(Location loc) {
 		//wallSet and emptySet will help you write this method
-		if (!field.containsKey(loc)){
+		if (field.containsKey(loc)){
 			return field.get(loc);
 		}
 		return null;
@@ -108,10 +108,10 @@ public class Map{
 			this.move(Name, locNew, Map.Type.GHOST);
 			return true;
 		}
-		
+
 		return false;
 	}
-	
+
 	public JComponent eatCookie(String name) {
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1

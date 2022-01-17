@@ -60,18 +60,18 @@ public class Ghost{
 		Location east = myLoc.shift(1, 0);
 		Location west = myLoc.shift(-1, 0);
 		if (myMap.getLoc(north).contains(Map.Type.PACMAN)){
-			return false;
+			return true;
 		}
 		else if (myMap.getLoc(south).contains(Map.Type.PACMAN)){
-			return false;
+			return true;
 		}
 		else if (myMap.getLoc(east).contains(Map.Type.PACMAN)){
-			return false;
+			return true;
 		}
 		else if (myMap.getLoc(west).contains(Map.Type.PACMAN)){
-			return false;
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	public boolean attack() {
